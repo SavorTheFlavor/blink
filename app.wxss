@@ -1,4 +1,11 @@
 /**app.wxss**/
+/* 小程序在每个page外面自动包裹了一层<page></page> */
+/* 这里的全局样式只有font和color会被components继承 */
+/* 但绝大多数的样式可以被page继承 */
+page{
+    font-family: "PingFangSC-Thin";
+    font-size: 32rpx;
+}
 .container {
   height: 100%;
   display: flex;
