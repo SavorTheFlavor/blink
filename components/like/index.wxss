@@ -1,8 +1,11 @@
 /* components/like/index.wxss */
 
 .container{
-  display: inline-flex; /*使container的宽度自适应*/
-  flex-direction: row;
+  display: inline-flex; /*使container的宽度自适应(根据里面内容的长度改变)*/
+  flex-direction: row; /*row row-reverse column column-reverse*/
+    /* flex-direction: row; is the chief axis */
+  /* justify-content: flex-end; chief axis align*/
+  /* align-content: flex-end; cross axis align; strech, baseline */
   padding: 10rpx;
 }
 
@@ -19,5 +22,5 @@
   position: relative;
   bottom: 10rpx;
   left: 6rpx;
-  line-height: 24rpx;
+  line-height: 24rpx; /* 文字高度(文字周围默认会有点空白) */
 }
