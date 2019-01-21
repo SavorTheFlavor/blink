@@ -1,4 +1,4 @@
-import {config} from '/config.js'
+import {config} from '../config.js'
 
 const tips = {
   99999: 'an error occurs...',
@@ -40,5 +40,6 @@ class HTTP{
       duration: 2000
     })
   }
-
 }
+
+export {HTTP}

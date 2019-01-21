@@ -1,3 +1,6 @@
+import {ClassicModel} from '../../models/classic.js'
+let classic = new ClassicModel()
+
 // pages/classic/classic.js
 Page({
 
@@ -12,16 +15,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    let that = this;
-    //都是异步的，所以都是用回调函数处理返回结果
-    wx.request({
-      url: 'http://bl.7yue.pro/v1/classic/latest?appKey=98HcsgdJ3mx4Ufcm',
-      success: (res) => {
-        //使用箭头函数的方式访问真实的this或者使用上面保存的that
-        console.log(this.data)
-      }
+
+    classic.getLatest((res) => {
+      this.setData({
+        classic: res
+      })
     })
+    
+    // let that = this;
+    // //都是异步的，所以都是用回调函数处理返回结果
+    // wx.request({
+    //   url: 'http://bl.7yue.pro/v1/classic/latest?appKey=98HcsgdJ3mx4Ufcm',
+    //   success: (res) => {
+    //     //使用箭头函数的方式访问真实的this或者使用上面保存的that
+    //     console.log(this.data)
+    //   }
+    // })
   },
 
   /**
